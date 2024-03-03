@@ -15,15 +15,24 @@ body{
 </style>
 
 <style scoped>
+.colorCircle{
+  height: 120px;
+  width: 120px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 60px;
+}
 .rightSide{
-  height: calc(100vh - 30px);
+  height: calc(100vh - 60px);
   width: 50vw;
   /* background-color: blue; */
 }
 
 .leftSide{
-  height: calc(100vh - 30px);
+  height: calc(100vh - 60px);
   width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* background-color: red; */
 }
 
