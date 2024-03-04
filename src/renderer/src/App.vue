@@ -2,12 +2,14 @@
   <div class="titleBar"></div>
   <div class="content">
     <div class="leftSide">
+      <div class="fixColorPicker">
+        <input type="color" v-model="colorHEX" id="colorPicker">
+        <a-button type="primary" @click="selectColor">选择颜色</a-button>
+      </div>
       <div class="colorCircle" :style="{'background-color': colorGet()}"></div>
     </div>
     <div class="rightSide">
       <div class="inputArea">
-        <input type="color" v-model="colorHEX" id="colorPicker">
-        <a-button type="primary" @click="selectColor">选择颜色</a-button>
       </div>
     </div>
   </div>
@@ -57,6 +59,11 @@ body{
 </style>
 
 <style scoped>
+.fixColorPicker{
+  position: absolute;
+  left: 20px;
+  top: 50px;
+}
 #colorPicker{
   position: absolute;
 }
