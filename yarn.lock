@@ -592,6 +592,11 @@
   resolved "https://registry.npmmirror.com/@pkgr/core/-/core-0.1.1.tgz#1ec17e2edbec25c8306d424ecfbf13c7de1aaa31"
   integrity sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==
 
+"@popperjs/core@^2.11.2":
+  version "2.11.8"
+  resolved "https://registry.npmmirror.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
+  integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
+
 "@rollup/rollup-android-arm-eabi@4.12.0":
   version "4.12.0"
   resolved "https://registry.npmmirror.com/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.12.0.tgz#38c3abd1955a3c21d492af6b1a1dca4bb1d894d6"
@@ -3092,6 +3097,13 @@ vue-eslint-parser@^9.4.2:
     esquery "^1.4.0"
     lodash "^4.17.21"
     semver "^7.3.6"
+
+vue-pick-colors@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.npmmirror.com/vue-pick-colors/-/vue-pick-colors-1.6.3.tgz#db69deb84bc97965de1c1bf254dcd7e69f744aa4"
+  integrity sha512-heSY2QofdPYA9RlsbEGbByG1VS7X4Ah2kzUITNHQk0aiNI8zDbXl8nUEXQhDUPNQ0Na13VcfDXhmfMvYEGJv9A==
+  dependencies:
+    "@popperjs/core" "^2.11.2"
 
 vue-types@^3.0.0:
   version "3.0.2"
