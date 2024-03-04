@@ -110,6 +110,7 @@ body{
   position: absolute;
 }
 .inputArea{
+  padding-top: 20px;
   padding-right: 10px;
 }
 .colorCircle{
