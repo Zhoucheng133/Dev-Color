@@ -20,7 +20,8 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
-    "ant-design-vue": "4.x"
+    "ant-design-vue": "4.x",
+    "vue-clipboard3": "^2.0.0"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^1.0.1",
