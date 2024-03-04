@@ -5,7 +5,7 @@
       <div class="colorCircle" :style="{'background-color': colorGet}"></div>
     </div>
     <div class="rightSide">
-
+      <div class="inputArea"></div>
     </div>
   </div>
 </template>
@@ -35,6 +35,9 @@ body{
 </style>
 
 <style scoped>
+.inputArea{
+  padding-right: 10px;
+}
 .colorCircle{
   height: 120px;
   width: 120px;
