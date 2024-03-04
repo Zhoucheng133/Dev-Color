@@ -17,7 +17,7 @@
 
         <div class="code">
           <div>{{ codeContent() }}</div>
-          <div class="copyIcon">
+          <div class="copyIcon" @click="copyHandler">
             <CopyOutlined />
           </div>
         </div>
@@ -29,6 +29,8 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { CopyOutlined } from '@ant-design/icons-vue';
+import useClipboard from 'vue-clipboard3'
+const { toClipboard } = useClipboard()
 
 var colorR=ref('255');
 var colorG=ref('255');
@@ -39,11 +41,23 @@ var colorHEX=ref('#FFFFFF')
 
 var selectLan=ref("CSS")
 
+var codeSelf="rgb(255, 255, 255)";
+
 function codeContent(){
   if(selectLan.value=="CSS"){
-    return `rgb(${colorR.value}, ${colorG.value}, ${colorB.value})`
+    codeSelf=`rgb(${colorR.value}, ${colorG.value}, ${colorB.value})`;
+    return `rgb(${colorR.value}, ${colorG.value}, ${colorB.value})`;
   }else if(selectLan.value=="Flutter"){
-    return `Color.fromRGB(${colorR.value}, ${colorG.value}, ${colorB.value})`
+    codeSelf=`Color.fromRGB(${colorR.value}, ${colorG.value}, ${colorB.value})`;
+    return `Color.fromRGB(${colorR.value}, ${colorG.value}, ${colorB.value})`;
+  }
+}
+
+async function copyHandler(){
+  try {
+    await toClipboard(codeSelf);
+  } catch (e) {
+    console.error(e);
   }
 }
 
