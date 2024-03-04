@@ -31,6 +31,7 @@ import { ref, watch } from 'vue';
 import { CopyOutlined } from '@ant-design/icons-vue';
 import useClipboard from 'vue-clipboard3'
 const { toClipboard } = useClipboard()
+import { message } from 'ant-design-vue';
 
 var colorR=ref('255');
 var colorG=ref('255');
@@ -56,8 +57,9 @@ function codeContent(){
 async function copyHandler(){
   try {
     await toClipboard(codeSelf);
+    message.success('复制代码成功!');
   } catch (e) {
-    console.error(e);
+    message.error('复制代码失败!');
   }
 }
 
