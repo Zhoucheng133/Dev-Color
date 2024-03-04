@@ -2,30 +2,52 @@
   <div class="titleBar"></div>
   <div class="content">
     <div class="leftSide">
-      <div class="colorCircle" :style="{'background-color': colorGet}"></div>
+      <div class="colorCircle" :style="{'background-color': colorGet()}"></div>
     </div>
     <div class="rightSide">
-      <div class="inputArea"></div>
+      <div class="inputArea">
+        <input type="color" v-model="colorHEX" id="colorPicker">
+        <a-button type="primary" @click="selectColor">选择颜色</a-button>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  computed: {
-    colorGet(){
-      return `rgba(${this.colorR}, ${this.colorG}, ${this.colorB}, ${this.colorAlpha})`
-    }
-  },
-  data() {
-    return {
-      colorR: 255,
-      colorG: 255,
-      colorB: 255,
-      colorAlpha: 1,
-    }
-  },
+<script setup>
+import { onMounted, ref, watch } from 'vue';
+
+var colorR=ref('255');
+var colorG=ref('255');
+var colorB=ref('255');
+var colorAlpha=ref('1');
+
+var colorHEX=ref('#FFFFFF')
+
+function selectColor(){
+  document.getElementById("colorPicker").click();
 }
+
+function colorGet(){
+  return `rgba(${colorR.value}, ${colorG.value}, ${colorB.value}, ${colorAlpha.value})`
+}
+
+function hexToRgb(hex) {
+  hex = hex.replace(/^#/, '');
+
+  // 将RR、GG、BB分量提取并转换为十进制数
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+
+  colorR.value=r;
+  colorG.value=g;
+  colorB.value=b;
+}
+
+watch(colorHEX, (newVal)=>{
+  hexToRgb(newVal);
+})
+
 </script>
 
 <style>
@@ -35,6 +57,9 @@ body{
 </style>
 
 <style scoped>
+#colorPicker{
+  position: absolute;
+}
 .inputArea{
   padding-right: 10px;
 }
