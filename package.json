@@ -4,7 +4,7 @@
   "productName": "Dev Color Tool",
   "description": "Color Tool for Developers",
   "main": "./out/main/index.js",
-  "author": "example.com",
+  "author": "zhouc",
   "homepage": "https://electron-vite.org",
   "scripts": {
     "format": "prettier --write .",
