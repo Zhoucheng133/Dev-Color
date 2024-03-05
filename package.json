@@ -1,7 +1,8 @@
 {
   "name": "dev-color",
   "version": "1.0.0",
-  "description": "An Electron application with Vue",
+  "productName": "Dev Color Tool",
+  "description": "Color Tool for Developers",
   "main": "./out/main/index.js",
   "author": "example.com",
   "homepage": "https://electron-vite.org",
