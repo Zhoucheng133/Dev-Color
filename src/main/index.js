@@ -12,6 +12,7 @@ function createWindow() {
     resizable: false,
     titleBarStyle: 'hiddenInset',
     ...(process.platform === 'linux' ? { icon } : {}),
+    title: "",
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false
