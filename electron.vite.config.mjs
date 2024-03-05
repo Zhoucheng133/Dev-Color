@@ -3,6 +3,11 @@ import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
+  pluginOptions: {
+    electronBuilder: {
+			nodeIntegration: true,
+		},
+  },
   main: {
     plugins: [externalizeDepsPlugin()]
   },
